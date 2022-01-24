@@ -1,0 +1,30 @@
+@import './project-system.scss';
+@import './project-extends.scss';
+@import './scss/gsc_bos.scss';
+
+.custom-system .dx-button .dx-button-text {
+  color: black;
+}
+
+.config-popup .dx-button-mode-contained .dx-icon.dx-icon-trash {
+  color: black;
+}
+
+.custom-system .dx-checkbox-checked:not(.dx-checkbox-indeterminate) .dx-checkbox-icon {
+  font-size: 18px !important;
+  color: #fff !important;
+  background: #447cff !important;
+  border: 1px solid #e8eaeb !important;
+}
+
+.custom-system .dx-checkbox-indeterminate .dx-checkbox-icon:before {
+  content: '\f067';
+  position: absolute;
+  display: block;
+  width: 8px;
+  top: 50%;
+  margin-top: -3px;
+  left: 50%;
+  margin-left: -5px;
+  color: #447cff;
+}

@@ -1,0 +1,46 @@
+$select-colors: $form-colors !default;
+
+.select {
+	&:not(.is-multiple) {
+		height: auto;
+	}
+	&:not(.is-multiple):not(.is-loading) {
+		&::after {
+			// @extend %arrow;
+
+			border-color: $input-arrow;
+
+			@include ltr-position(0em);
+
+			z-index: 4;
+
+			// 2021-06-28 14:33:46 add
+			font-family: "fontello";
+			content: "\e801";
+			font-size: 32px;
+			display: inline-flex;
+			align-items: center;
+			position: absolute;
+			//   right:0;
+			top: 0;
+			width: 32px;
+			// height: 32px;
+			height: 2.25rem;
+			pointer-events: none;
+            border: inherit;
+            border-radius: initial;
+            transform: inherit;
+            margin-top:0;
+            color:#8d8d8d;
+
+		}
+	}
+
+	
+}
+// div[class^='tb-'] {
+// 	.col {
+
+		
+// 	}
+// }

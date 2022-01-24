@@ -1,0 +1,364 @@
+// .button {
+//     transition: all .4s;
+//     transform: rotate(0deg);
+//     &.add {
+//         transform: rotate(180deg);
+//     }
+// }
+
+// 2021-06-21 12:56:31
+// .menu {
+//     overflow: auto;
+//     height: 100vh;
+// }
+
+$login-width: 23.75rem;
+
+// 로그인 페이지
+.login, .error {
+	min-height: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url("#{$img-path}bg_login.jpg") no-repeat 50% 50%;
+	background-size: cover;
+	margin-bottom: 10px;
+	position: relative;
+}
+.error {
+	background: none;
+}
+.error-box {
+	display: flex;
+	// justify-content: center;
+	align-items: center;
+	.msg-box {
+		margin-top:30px;
+		font-size: 1.125rem;
+		// &.err404 {
+		// 	padding-top: 180px;
+		// 	background: url("#{$img-path}bg_err.png") no-repeat 50% 0;
+		// }
+	}
+	.buttons {
+		margin-top:80px;
+		.button {
+			width:275px;
+		}
+	}
+}
+.error-box,
+.login-box {
+	flex-direction: column;
+	display: flex;
+	position: relative;
+	width: 660px;
+	// margin: auto;
+	position: relative;
+	z-index: 2;
+	h1 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		// +font-set(20px, -.4px, 18px);
+		span {
+			font-size: 20px;
+			margin-left: 15px;
+		}
+	}
+	.input {
+		&.is-medium {
+			border: solid 1px #dfe3ea;
+			background-color: #f0f4fa;
+			font-size: 1.125rem;
+			height: 3rem;
+		}
+	}
+	.form-box {
+		margin: 40px auto 0;
+		width: $login-width;
+		.control:not(:last-child) {
+			margin-bottom: 0.75rem;
+		}
+		.is-text {
+			color: #707070;
+			font-size: 14px;
+			// margin: 0.95rem 0 0rem;
+			height:auto;
+			padding:0;
+			text-decoration: none;
+			&:hover,
+			&.is-hovered,
+			&:focus,
+			&.is-focused {
+				box-shadow: none;
+				background-color: transparent;
+			}
+		}
+	}
+	.box {
+		width: $login-width;
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.06);
+		border: solid 1px #e6e6e6;
+		background-color: #ffffff;
+		margin: 20px auto 0;
+		font-size: 13px;
+		letter-spacing: -0.5px;
+		position: relative;
+		padding: 0.95rem 1rem;
+		&:after {
+			content: "";
+			position: absolute;
+			border-style: solid;
+			border-width: 0 5px 9px;
+			border-color: #ffffff transparent;
+			display: block;
+			width: 0;
+			z-index: 1;
+			top: -8px;
+			left: calc(50% - 9px);
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			border-style: solid;
+			border-width: 0 5px 9px;
+			border-color: #dbdbdb transparent;
+			display: block;
+			width: 0;
+			z-index: 0;
+			top: -10px;
+			left: calc(50% - 9px);
+			box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.06);
+		}
+	}
+}
+.bullet-list {
+	li {
+		position: relative;
+		color: #707070;
+		padding: {
+			left: 8px;
+			// &:not(:last-child) {
+			bottom: 5px;
+			// }
+		}
+		// text-indent: -8px
+		// @include font-set(13px, -.26px, 24px);
+		&::before {
+			content: "";
+			width: 3px;
+			height: 3px;
+			background: {
+				color: #707070;
+			}
+			position: absolute;
+			left: 0;
+			top: 10px;
+		}
+	}
+}
+
+
+
+
+
+// .select:not(.is-multiple):not(.is-loading)::after{
+//     // border: 3px solid transparent;
+//     // border-radius: 2px;
+//     // border-right: 0;
+//     // border-top: 0;
+// 	font-family: "fontello";
+//     content: "\e801";
+//     font-size: 32px;
+// 	border:none;
+// 	border-radius: initial;
+// 	transform: initial;
+// 	transform-origin: initial;
+// 	right:0;
+// 	width:32px;
+// 	height: 32px;
+// 	display: flex;
+// 	align-items: center;
+	
+// }
+
+
+.breadcrumb {
+	font-size: 15px;
+	// padding-bottom: .5rem;
+	// &:not(:last-child) {
+	// 	margin-bottom:0;
+	// }
+	.button {
+		padding:0;
+		margin:0;
+		width:auto;
+		height:auto;
+		// border:transparent;
+		color:$color-02;
+		background-color: transparent;
+    	border-color: transparent;
+		i {
+			width:22px;
+			height: 22px;
+			&::before {
+				font-size: 28px;
+			}
+		}
+		&:focus,
+		// &:focus-within,
+		&:hover,
+		&.is-active {
+			color:$color-01;
+			box-shadow: none;
+		}
+	}
+	li {
+		//  {
+		// 	&:focus,
+		// 	&:focus-within,
+		// 	&:hover,
+		// 	&.is-active {
+		// 		outline: none;
+		// 	}
+		// }
+		a {
+			color:#7c7c7c;
+			&:hover {
+				color:$color-01;
+			}
+		}
+		&.is-active {
+			a {
+				padding-right:5px;
+			}
+		}
+	}
+}
+
+
+
+// 타이틀
+#contents {
+	h2 {
+		font-size: 20px;
+		font-weight: 500;
+		position: relative;
+		&::before {
+			content: ' ';
+			display: inline-flex;
+			height: 16px;
+			width:4px;
+			border-radius: 2px;
+			margin-right:8px;
+			background-color:$color-01;
+			
+		}
+	}
+
+	// 검색영역
+	$label-gap:0.75rem;
+	.tb-search {
+		background-color: $color-07;
+		padding:$column-gap;
+		// padding-top:$column-gap;
+		.row {
+			&:last-child {
+				margin-bottom:0;
+			}
+			&:not(:last-child) {
+				margin-bottom:-$column-gap;
+			}
+		}
+
+	}
+	.tb-write {
+
+		.row {
+			border-top:1px solid #ccc;
+			border-bottom:1px solid #ccc;
+			&:not(:last-child) {
+				border-bottom:0;
+			}
+		}
+		.col { 
+			padding: 0;
+			min-height: 48px;
+			label.label {
+				background-color: #F2F4F7;
+				padding-left:calc(#{$column-gap} * 2);
+				padding-top:6px;
+				padding-bottom:6px;
+				min-width: calc(#{$min-label} + 24px);
+			}
+			// input, button {
+			// 	// margin:0.313rem 0.625rem;
+			// 	margin-left: 0.625rem;
+			// 	margin-right: 0.625rem;
+
+			// }
+			
+		}
+	
+	}
+}
+.select {
+	select {
+		// min-width:$max-input;
+	}
+}
+.hy {
+	display: inline-flex;
+	width:1rem;
+	align-items: center;
+	justify-content: center;
+}
+.is-info {
+	background: #F5F5F5;
+	box-shadow: none;
+	border-radius: 0;
+	ul {
+		margin-top:5px;
+		font-size: 14px;
+		color:#888;
+		li {
+			text-indent: -0.65rem;
+			margin-left:0.65rem;
+			&:not(:last-child) {
+				margin-bottom:5px;
+			}
+		}
+	}
+	&:not(:last-child) {
+		margin-bottom:10px;
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: 400;
+		&:not(:last-child) {
+
+			margin-bottom:0;
+		}
+		i::before {
+			font-size: 16px;
+			margin-right:5px;
+		}
+	}
+}
+.has-tag {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.tag-box {
+	justify-content: center;
+	// flex:0 0 20%;
+	display: flex;
+	.control:not(:last-child) {
+		margin-right:5px;
+	}
+}
+
+ 

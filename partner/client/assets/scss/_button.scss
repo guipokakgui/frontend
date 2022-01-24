@@ -1,0 +1,80 @@
+.buttons {
+    margin-bottom: 0;
+
+    // &.are-small {
+    //     .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
+    //         // border-radius: 4px;
+    //     }
+    // }
+    &:last-child {
+        margin-bottom: 0rem;
+    }
+    .button {
+        margin-bottom: 0;
+        padding: {
+            left: 0.75em;
+            right: 0.75em;
+        }
+
+        &.is-gsc {
+            border-color: $color-01;
+            background-color: $color-01;
+            color: #fff;
+            // border-radius: 4px;
+        }
+        &.is-outlined {
+            border-color: $color-01;
+            background-color: #fff;
+            color: $color-01;
+        }
+        // &.is-small {
+        // 	// font-size: 0.938rem;
+        // }
+        &:not(:last-child):not(.is-fullwidth) {
+            @include ltr-property("margin", 0.2rem);
+        }
+        
+        &.is-small {
+            @include button-small;
+            height: auto;
+        }
+        &.is-large {
+            // @include button-large;
+            font-size: 1.125rem;
+            height: 3.5rem;
+
+        }
+        .ic-search {
+            // height: ;
+            // overflow: hidden;
+            // width:28px;
+            // height:28px;
+            // display: flex;
+            // justify-content: flex-start;
+            &:before {
+                color: inherit;
+                // width:auto;
+                font-size: 16px;
+                margin-right:5px;
+                // display: flex;
+                // align-items: center;
+                // justify-content: flex-start;
+                // overflow: hidden;
+                // width:28px;
+                // height: 28px;
+            }
+        }
+    }
+}
+.button,
+.input,
+.textarea,
+.select select,
+.file-cta,
+.file-name {
+    font-size: 0.938rem;
+    // height: 2.25rem;
+}
+// .ic-search {
+//     color: $color-01;
+// }

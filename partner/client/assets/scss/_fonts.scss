@@ -1,0 +1,163 @@
+$font-name: 'NotoSansKR';
+$font-path: './fonts/';
+$fonts: (
+  'Thin': 100,
+  'Light': 300,
+  'Regular': 400,
+  'Medium': 500,
+  'Bold': 700,
+  'Black': 900,
+);
+
+@each $name, $size in $fonts {
+  @font-face {
+    font-family: #{$font-name};
+    font-weight: $size;
+    font-style: normal;
+    // src : local('Noto Sans KR #{$name}'), local('#{$font-name}-#{$name}')
+    src: url('#{$font-path}#{$font-name}-#{$name}.woff') format('woff'), url('#{$font-path}#{$font-name}-#{$name}.woff2') format('woff2'),
+      url('#{$font-path}#{$font-name}-#{$name}.otf') format('opentype');
+  }
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('#{$font-path}fontello.eot?50620492');
+  src: url('#{$font-path}fontello.eot?50620492#iefix') format('embedded-opentype'), url('#{$font-path}fontello.woff?50620492') format('woff'),
+    url('#{$font-path}fontello.ttf?50620492') format('truetype'), url('#{$font-path}fontello.svg?50620492#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.gsc-icon {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  // speak: never;
+
+  display: inline-flex; //2021-06-28 16:47:22
+  // display: inline-block;
+  text-decoration: inherit;
+  // width: 1em;
+
+  align-items: center;
+  justify-content: center;
+
+  // 2021-06-28 16:48:01
+  // width:32px;
+  // height: 32px;
+
+  // margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  // line-height: 1em;
+  line-height: 1;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  // margin-left: 0.2em;
+
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  &::before {
+    font-size: 32px;
+    box-sizing: border-box;
+    // height: 32.1px;
+  }
+}
+
+// .icon-dot:before { content: '\e80e'; } /* '' */
+// .icon-cal:before { content: '\e80f'; } /* '' */
+// .icon-point:before { content: '\e810'; } /* '' */
+// .icon-cus:before { content: '\e811'; } /* '' */
+// .icon-card:before { content: '\e812'; } /* '' */
+// .icon-com:before { content: '\e813'; } /* '' */
+// .icon-bag:before { content: '\e814'; } /* '' */
+// .icon-tag:before { content: '\e815'; } /* '' */
+// .icon-hand:before { content: '\e816'; } /* '' */
+// .icon-shop:before { content: '\e817'; } /* '' */
+// .icon-fold:before { content: '\e80b'; } /* '' */
+// .icon-arw:before { content: '\e80c'; } /* '' */
+// .icon-bullet:before { content: '\e800'; } /* '' */
+// .icon-sel:before { content: '\e801'; } /* '' */
+// .icon-search:before { content: '\e802'; } /* '' */
+
+.ic-info:before {
+  content: '\e800';
+} /* '' */
+.ic-sel:before {
+  content: '\e801';
+} /* '' */
+.ic-search:before {
+  content: '\e802';
+} /* '' */
+.ic-star:before {
+  content: '\e803';
+} /* '' */
+.ic-down:before {
+  content: '\e804';
+} /* '' */
+.ic-check:before {
+  content: '\e805';
+} /* '' */
+.ic-edit:before {
+  content: '\e806';
+} /* '' */
+.ic-renew:before {
+  content: '\e807';
+} /* '' */
+.ic-fold:before {
+  content: '\e80b';
+} /* '' */
+.ic-more:before {
+  content: '\e80e';
+} /* '' */
+.ic-cal:before {
+  content: '\e80f';
+} /* '' */
+.ic-point:before {
+  content: '\e810';
+} /* '' */
+.ic-cus:before {
+  content: '\e811';
+} /* '' */
+.ic-card:before {
+  content: '\e812';
+} /* '' */
+.ic-com:before {
+  content: '\e813';
+} /* '' */
+.ic-bag:before {
+  content: '\e814';
+} /* '' */
+.ic-tag:before {
+  content: '\e815';
+} /* '' */
+.ic-hand:before {
+  content: '\e816';
+} /* '' */
+.ic-shop:before {
+  content: '\e817';
+} /* '' */
+.ic-add:before {
+  content: '\e81a';
+} /* '' */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .gsc-icon::before {
+    // height: calc(100% - 2px);
+    margin-top: 2px;
+  }
+}

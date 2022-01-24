@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head {{ HEAD_ATTRS }}>
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+    <div style="display: none" th:text="${spaData}" id="__spa">{{ SERVER_DATA }}</div>
+  </body>
+</html>

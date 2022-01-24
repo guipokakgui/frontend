@@ -1,0 +1,2028 @@
+@mixin font-set($font-size, $spacing, $line-height) {
+  font: {
+    size: $font-size;
+  }
+  letter-spacing: $spacing;
+  line: {
+    height: $line-height;
+  }
+}
+
+$color-1: #111111;
+$color-2: #e3e9eb;
+$color-3: #3a3a3a;
+$color-4: #f6f6f6;
+$color-5: #cccccc;
+$color-6: #eeeeee;
+$color-7: #333333;
+
+$border-color: $color-5;
+
+// 여백
+$col-spacing: 10px;
+$row-spacing: 7px;
+$item-spacing: 5px;
+
+.custom-system {
+  .dx-widget {
+    font: {
+      family: 'NotoSansKR';
+    }
+  }
+
+  // 여백
+  .ustra {
+    &.fieldset {
+      .row {
+        > * {
+          &:not(:last-child) {
+            margin: {
+              right: 0;
+            }
+            // n/1안되는 문제로 주석
+            // padding: {
+            //   right: $col-spacing;
+            // }
+          }
+        }
+      }
+    }
+    .row {
+      > * {
+        &:not(:last-child) {
+          margin: {
+            right: 0;
+          }
+          // n/1안되는 문제로 주석
+          // padding: {
+          //   right: $col-spacing;
+          // }
+        }
+      }
+    }
+    &.button-bar {
+      > * {
+        &:not(:last-child) {
+          margin: {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // Grid
+  .dx-datagrid-headers {
+    .dx-datagrid-table {
+      .dx-row {
+        > td {
+          border: {
+            bottom: none;
+          }
+        }
+      }
+    }
+    .dx-datagrid-headers {
+      .dx-datagrid-table {
+        border: {
+          right: none;
+        }
+      }
+    }
+    + .dx-datagrid-rowsview {
+      border: {
+        color: #cccccc;
+      }
+    }
+  }
+  .dx-datagrid {
+    .dx-row {
+      > td {
+        padding: 8px 15px;
+        font: {
+          size: 14px;
+        }
+        color: #555555;
+      }
+    }
+    .dx-row-alt {
+      > td {
+        background: {
+          color: #fff;
+        }
+      }
+    }
+    .dx-column-lines {
+      > td {
+        border: {
+          color: #cccccc;
+        }
+      }
+    }
+    .dx-sort-down,
+    .dx-sort-up {
+      &:before {
+        color: #ffffff;
+      }
+    }
+  }
+  .dx-datagrid-content {
+    .dx-datagrid-table {
+      // Thead
+      .dx-header-row {
+        > td {
+          background: {
+            color: #447cff;
+          }
+          text-align: center !important;
+          padding: 7px 15px 6px;
+          .dx-datagrid-text-content {
+            color: #ffffff;
+            font: {
+              size: 13px;
+              weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dx-datagrid-borders {
+    > .dx-datagrid-headers {
+      border: {
+        color: #cccccc !important;
+      }
+    }
+    .dx-datagrid-rowsview {
+      border: {
+        color: #cccccc;
+      }
+    }
+  }
+  .dx-datagrid-nodata {
+    @include font-set(14px, 0px, 22px);
+    color: #888888;
+  }
+  .dx-datagrid-rowsview {
+    .dx-selection {
+      &.dx-row {
+        &:not(.dx-row-focused) {
+          &.dx-column-lines {
+            > td {
+              border: {
+                color: #cccccc;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ustra {
+    &.fieldset {
+      .title {
+        background: none;
+      }
+    }
+  }
+
+  // 검색영역
+  .search-box {
+    .ustra {
+      &.button-bar {
+        background: none;
+        padding: 0 !important;
+        border: {
+          left: none;
+        }
+      }
+      &.title {
+        align-items: center;
+        justify-content: space-between;
+        .title {
+          @include font-set(16px, 0px, 24px);
+          color: #111111;
+          margin: 0;
+          padding: {
+            left: 9px;
+          }
+          position: relative;
+          display: flex;
+          justify-content: flex-start;
+          transform: translateX(-30px);
+          &::before {
+            content: '';
+            width: 4px;
+            height: calc(100% - 4px);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: {
+              color: #444444;
+            }
+          }
+        }
+        .util-button-box {
+          display: flex;
+          justify-content: flex-end;
+          .dx-button {
+            margin: {
+              left: 5px;
+            }
+            &:first-child {
+              margin: {
+                left: 0px;
+              }
+            }
+            .dx-button-content {
+              padding: 5px 10px;
+            }
+            .dx-button-text {
+              @include font-set(14px, 0px, 20px);
+              color: #111111;
+            }
+          }
+        }
+      }
+    }
+
+    > div {
+      + .field-box {
+        margin: {
+          top: 20px;
+        }
+      }
+    }
+  }
+
+  // div {
+  //   + .title-box {
+  //     margin: {
+  //       top: 10px;
+  //     }
+  //   }
+  // }
+
+  // title box
+  .title-box {
+    // margin: {
+    //   bottom: 10px;
+    // }
+    .ustra {
+      padding: 0 !important;
+      background: none;
+      &.title {
+        align-items: center;
+        justify-content: space-between;
+        border: {
+          left: none;
+        }
+        .title {
+          @include font-set(16px, -0.32px, 24px);
+          color: #111111;
+          margin: 0;
+          padding: {
+            left: 9px;
+          }
+          position: relative;
+          display: flex;
+          justify-content: flex-start;
+          width: auto;
+          &::before {
+            content: '';
+            width: 4px;
+            height: calc(100% - 4px);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: {
+              color: #444444;
+            }
+          }
+          + .util-button-box {
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+      // .util-button-box {
+      //   // 고객정보수정
+      //   // display: block;
+      //   // text-align: right;
+      //   // width: 100%;
+      //   .dx-button {
+      //     margin: {
+      //       left: 5px;
+      //     }
+      //     &:first-child {
+      //       margin: {
+      //         left: 0px;
+      //       }
+      //     }
+      //   }
+      // }
+    }
+    + .field-box,
+    + div {
+      margin: {
+        top: 10px;
+      }
+      + div {
+        margin: {
+          top: 10px;
+        }
+      }
+    }
+    + .dx-widget {
+      margin: {
+        top: 15px;
+      }
+    }
+  }
+
+  // dx-show-invalid-badge dx-textbox dx-texteditor dx-editor-outlined dx-texteditor-empty dx-widget dx-validator dx-visibility-change-handler
+
+  // dx-show-invalid-badge dx-textbox dx-texteditor dx-show-clear-button dx-editor-outlined dx-texteditor-empty dx-widget
+
+  // dx-show-invalid-badge dx-selectbox dx-textbox dx-texteditor dx-dropdowneditor-button-visible dx-editor-outlined dx-widget dx-dropdowneditor dx-dropdowneditor-field-clickable
+
+  // 검색 box
+  .field-box {
+    padding: 10px 20px !important;
+    background: {
+      color: #e3eaeb;
+    }
+    // .field-box {
+    //   padding: 0 !important;
+    //   background: none !important;
+    //   border: none;
+    // }
+    &.view {
+      background: {
+        color: #f0f4fa;
+      }
+    }
+    .fieldset {
+      flex-grow: 1;
+    }
+    .dx-field-value {
+      div {
+        + .dx-button {
+          margin: {
+            left: 10px;
+          }
+        }
+      }
+    }
+    > .ustra {
+      display: block;
+      padding: 0 !important;
+      background: none;
+      // margin: 0 -15px;
+      flex: {
+        direction: column;
+      }
+      justify-content: flex-start;
+      .border {
+        border: none;
+      }
+      &.button-bar {
+        > *:not(:last-child) {
+          margin: {
+            right: 0;
+          }
+        }
+        .row {
+          + .row {
+            margin: {
+              top: 7px;
+            }
+          }
+        }
+      }
+    }
+    .dx-field {
+      margin: 0;
+      align-items: center;
+      .dx-field-label {
+        float: none;
+        width: 100px;
+        min-width: 100px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        span {
+          font: {
+            weight: 400;
+          }
+          @include font-set(13px, 0px, 19px);
+          color: #333333;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          &.dx-field-item-required-mark {
+            color: #c9302c;
+            padding: {
+              left: 0 !important;
+            }
+          }
+        }
+      }
+      .dx-field-value {
+        float: none;
+        padding: {
+          left: 10px;
+          right: 10px;
+        }
+        // width:150px !important;
+        align-items: center;
+        min-height: 30px;
+        @include font-set(14px, 0, 20px);
+        > * {
+          margin: 0 $item-spacing;
+          flex-grow: 0; // 우편번호 팝업 공간으로 인해서 넣음
+          border-radius: 4px;
+          &:first-child {
+            margin: {
+              left: 0;
+            }
+          }
+          &:last-child {
+            margin: {
+              right: 0;
+            }
+          }
+        }
+        .dx-textbox {
+          + .dx-button {
+            margin: {
+              left: 10px;
+            }
+          }
+        }
+        &.full-width {
+          > * {
+            flex-grow: 1;
+          }
+        }
+      }
+      // &:not(:last-child) {
+      // }
+      .dx-button-mode-contained {
+        border: {
+          color: #ccc;
+        }
+      }
+      .dx-field {
+        .dx-field-label {
+          // @include font-set(13px, 0px, 19px);
+          span {
+            line-height: 21px;
+            color: #888888;
+          }
+        }
+        .dx-field-value {
+          padding: {
+            right: 10px; // 제휴가맹점 > 계약정보관리 > 한도정보관리
+          }
+        }
+      }
+    }
+    .row {
+      display: flex;
+      width: 100%;
+      > div {
+        flex: {
+          basis: 0px; // auto일경우 보너스카드 레이아웃틀어짐
+        }
+        // 공통 틀어지는 부분 이용운차장님 쪽 class추가, 안될경우 dx-field flex-grow 인라인 스타일제거
+        &.col-2 {
+          flex: {
+            grow: 2 !important;
+            shrink: 1;
+          }
+        }
+      }
+      + .row {
+        margin: {
+          top: $row-spacing;
+        }
+      }
+    }
+    .dx-texteditor {
+      .dx-editor-outlined {
+        border: {
+          color: #dddddd;
+        }
+      }
+    }
+    // input
+    .dx-texteditor {
+      &.dx-editor-outlined {
+        border: {
+          color: #cccccc;
+        }
+      }
+      &.dx-state-readonly {
+        border: {
+          style: solid;
+        }
+        .dx-texteditor-input {
+          color: #bbbbbb;
+        }
+      }
+    }
+
+    .dx-texteditor-input {
+      padding: 4px 8px;
+      @include font-set(14px, 0px, 20px);
+      color: #111111;
+      min-height: auto;
+      border: {
+        radius: 0px;
+      }
+    }
+    .dx-datebox {
+      + .dx-radiogroup {
+        margin: {
+          left: 6px;
+        }
+      }
+    }
+
+    .dx-texteditor-buttons-container {
+      // width: 24px + 20px;
+      // width: 29px;
+      // position: relative;
+      .dx-button-mode-contained {
+        border: none;
+        margin: 0;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        position: absolute;
+        top: 2px;
+        // right: 10px;
+        right: 2px;
+        text-align: center;
+        padding: 0;
+        .dx-button-content {
+          padding: 0 !important;
+          border: none;
+          width: 24px;
+          .dx-icon {
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 16px;
+          }
+          ::before {
+            width: auto;
+            height: auto;
+            color: #333333;
+            margin: 0;
+            // transform: translate(-50%, -50%);
+            position: static;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .dx-selectbox-container {
+      .dx-dropdowneditor-icon {
+        border: none;
+        width: 24px;
+      }
+      .dx-button-content {
+        ::before {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  // select box
+  // .dx-selectbox {
+  // }
+  .dx-dropdownlist-popup-wrapper {
+    .dx-popup-content {
+      padding: 0;
+    }
+    .dx-list {
+      &:not(.dx-list-select-decorator-enabled) {
+        .dx-list-item-content {
+          padding: 5px 10px;
+          color: #111;
+          @include font-set(14px, 0px, 20px);
+        }
+        .dx-list-item {
+          &.dx-list-item-selected {
+            background: {
+              color: #447cff;
+            }
+            .dx-list-item-content {
+              color: #fff;
+            }
+          }
+          &.dx-state-hover {
+            background: {
+              color: #e3eaeb;
+            }
+            .dx-list-item-content {
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+    &.dx-popup-wrapper {
+      .dx-overlay-content {
+        border: none;
+      }
+    }
+  }
+
+  .dx-popup-wrapper {
+    > .dx-overlay-content {
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+  .dx-scrollview-content {
+    padding: 10px;
+  }
+
+  .ustra {
+    &:not(.fieldset) {
+      &.border {
+        border: {
+          color: #cccccc;
+        }
+      }
+    }
+  }
+
+  // // check box
+  // .dx-checkbox-text {
+  //   width: auto;
+  // }
+
+  // // radio button
+  // .dx-radiogroup {
+  //   .dx-radiobutton-icon {
+  //     margin: 0;
+  //     margin-top: 1px;
+  //   }
+  // }
+  // .dx-radiobutton-icon {
+  //   width: 20px;
+  //   height: 20px;
+  // }
+  // .dx-radiobutton {
+  //   margin: 0;
+  //   .dx-radio-value-container {
+  //     padding: {
+  //       right: 5px;
+  //     }
+  //   }
+  //   .dx-item-content {
+  //     @include font-set(14px, 0px, 20px);
+  //     color: #111111;
+  //     margin: {
+  //       left: 5px;
+  //     }
+  //   }
+  //   // + .dx-radiobutton {
+  //   //   margin: {
+  //   //     left: 16px;
+  //   //   }
+  //   // }
+  // }
+  // .dx-state-disabled {
+  //   .dx-radiobutton-icon {
+  //     &:before {
+  //       background: {
+  //         color: #eeeeee;
+  //       }
+  //     }
+  //   }
+  //   .dx-checkbox-icon {
+  //     background: {
+  //       color: #eeeeee;
+  //     }
+  //   }
+  // }
+  // .dx-radiobutton-icon {
+  //   &:before {
+  //     width: 18px;
+  //     height: 18px;
+  //     border: {
+  //       radius: 100%;
+  //       color: #cccccc;
+  //     }
+  //   }
+  // }
+  // .dx-radiobutton-icon-checked {
+  //   .dx-radiobutton-icon-dot {
+  //     background: {
+  //       color: #447cff;
+  //     }
+  //     margin: {
+  //       top: -14px;
+  //       left: 6px;
+  //     }
+  //   }
+  // }
+
+  // // checkbox
+  // .dx-checkbox-icon {
+  //   width: 18px;
+  //   height: 18px;
+  //   border: {
+  //     color: #cccccc;
+  //   }
+  // }
+
+  $view-data-box-field-background-color: $color-4;
+  $view-data-box-label-background-color: $color-6;
+  $view-data-box-label-color: $color-7;
+  // view data box
+  .view-data-box {
+    border: 1px solid $border-color;
+    .row {
+      border: {
+        bottom: 1px solid $border-color;
+      }
+      > *:not(:last-chld) {
+        margin: {
+          right: 10px;
+        }
+      }
+      &:last-child {
+        border: {
+          bottom: none;
+        }
+      }
+      + .row {
+        margin: {
+          top: 0;
+        }
+      }
+    }
+
+    .dx-field {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      .dx-field-label {
+        background: {
+          color: $view-data-box-label-background-color;
+        }
+        border : {
+          right: 1px solid $border-color;
+        }
+        padding: 7px 10px 6px;
+        span {
+          @include font-set(13px, 0px, 21px);
+          color: $view-data-box-label-color;
+        }
+      }
+      .dx-field-value {
+        padding: {
+          left: 10px;
+        }
+        float: none;
+
+        // .dx-checkbox,
+        // .dx-textbox {
+        //   // 고객/카드 > 개인정보관리 > 고객정보수정(관리자) 문제로 주석
+        //   // flex: {
+        //   //   grow: 0 !important;
+        //   // }
+        // }
+      }
+      &:not(:first-child) {
+        .dx-field-label {
+          border : {
+            left: 1px solid $border-color;
+          }
+        }
+      }
+    }
+
+    .dx-texteditor {
+      &.dx-editor-outlined {
+        // 수정폼에서 보이지 않음
+        // border: none;
+        margin: {
+          right: 0;
+        }
+        // 수정폼에서 보이지 않음
+        &.dx-state-disabled {
+          border: none;
+        }
+      }
+    }
+    .dx-texteditor-input,
+    .dx-item-content,
+    .dx-checkbox-text {
+      @include font-set(14px, 0, 20px);
+      color: #111111;
+    }
+  }
+
+  // 조회 수 영역
+  .grid-total-box {
+    // margin : {
+    //   top: 20px;
+    // }
+    width: 100%;
+    .help-box {
+      padding: 0 !important;
+      border: {
+        left: none !important;
+      }
+      background: none !important;
+      @include font-set(14px, 0px, 20px);
+      font: {
+        weight: 500;
+      }
+      line-height: 30px;
+      color: #333333;
+      > i {
+        display: none;
+      }
+      > span {
+        color: #447cff;
+      }
+      .util-button-box {
+        text-align: right;
+        margin: {
+          top: -30px;
+        }
+      }
+    }
+    + .comment-box {
+      margin: {
+        top: 10px;
+      }
+    }
+  }
+
+  // button
+  .dx-button {
+    // &.dx-button-has-icon {
+    //   .dx-button-content {
+    //     margin: {
+    //       top: -2px;
+    //     }
+    //   }
+    // }
+    &.dx-button-has-text {
+      border: {
+        radius: 4px;
+        color: #dddddd;
+      }
+      background: {
+        color: #ffffff;
+      }
+      .dx-button-content {
+        padding: 4px 10px;
+        min-width: 66px;
+        text-align: center;
+      }
+      &.dx-button-mode-contained {
+        &.dx-button-default {
+          background: {
+            color: #ffffff;
+          }
+          border: {
+            radius: 4px;
+            color: #dddddd;
+          }
+          // padding: {
+          //   top: 4px;
+          //   bottom: 4px;
+          // }
+          .dx-icon {
+            color: #333;
+          }
+        }
+      }
+      .dx-button-text {
+        @include font-set(14px, 0px, 20px);
+      }
+
+      &.dx-button-success {
+        background: {
+          color: #447cff;
+        }
+        border: {
+          color: #447cff;
+        }
+        .dx-button-text {
+          color: #ffffff !important;
+        }
+        &.dx-state-hover {
+          background: {
+            color: #447cff;
+          }
+          border: {
+            color: #447cff;
+          }
+        }
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    + .dx-button {
+      margin: {
+        left: 5px;
+      }
+    }
+    + .right.dx-button {
+      margin: {
+        left: auto;
+      }
+    }
+  }
+
+  // 간격
+  .dx-item {
+    &.dx-box-item {
+      // min-height: auto !important; 유종별기준단가등록
+      // flex-basis: unset !important;
+      + .dx-item {
+        // margin: {
+        //   top: 15px;
+        // }
+      }
+      // .dx-box-item {
+      //   // 고객정보 수정
+      //   margin: {
+      //     top: 0;
+      //   }
+      // }
+    }
+  }
+
+  // scrollbar
+  .dx-scrollable-scroll-content {
+    background: {
+      color: #999999;
+    }
+    border: {
+      radius: 10px;
+    }
+  }
+
+  // Tab Menu
+  // .dx-tabpanel-container {
+  //   .dx-multiview-wrapper {
+  //     padding: {
+  //       top: 15px;
+  //     }
+  //     border: none;
+  //   }
+  // }
+  // .dx-tabpanel {
+  //   &.dx-state-focused {
+  //     > .dx-tabpanel-tabs {
+  //       .dx-tabs {
+  //         box-shadow: none;
+  //         // border: none;
+  //       }
+  //       .dx-tab {
+  //         &.dx-tab-selected {
+  //           box-shadow: none;
+  //           .dx-tab-content {
+  //             color: #ffffff;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   > .dx-tabpanel-tabs {
+  //     .dx-tabs {
+  //       background: none;
+  //       box-shadow: none;
+  //       border: {
+  //         bottom: 1px solid #cccccc;
+  //       }
+  //     }
+
+  //     .dx-tab {
+  //       box-shadow: none;
+  //       background: {
+  //         color: #fff;
+  //       }
+  //       border: {
+  //         top: none;
+  //         left: none;
+  //       }
+  //       .dx-tab-content {
+  //         color: #888888;
+  //         @include font-set(14px, 0px, 20px);
+  //       }
+  //       &.dx-tab-selected {
+  //         border: {
+  //           top: 1px solid #447cff;
+  //           left: 1px solid #447cff;
+  //         }
+
+  //         box-shadow: initial;
+  //         background: {
+  //           color: #447cff;
+  //         }
+  //         .dx-tab-content {
+  //           color: #ffffff;
+  //         }
+  //         &.dx-state-hover {
+  //           .dx-tab-content {
+  //             color: #ffffff;
+  //           }
+  //         }
+  //       }
+  //       &.dx-state-focused {
+  //         box-shadow: initial;
+  //         border: none;
+  //         .dx-tab-content {
+  //           color: #ffffff;
+  //         }
+  //       }
+  //       &.dx-state-hover {
+  //         .dx-tab-content {
+  //           color: #447cff;
+  //         }
+  //       }
+
+  //       &:last-child {
+  //         border: {
+  //           right: none;
+  //         }
+  //         &.dx-tab-selected {
+  //           border: {
+  //             right: 1px solid #447cff;
+  //           }
+  //         }
+  //       }
+  //       &:not(.dx-tab-selected) {
+  //         &:first-of-type {
+  //           box-shadow: initial;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  .dx-tab {
+    padding: 9px;
+    background-color: #fff;
+    color: #7c7c7c;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs {
+    .dx-tabs {
+      .dx-tab.dx-state-hover {
+        background-color: #fff;
+        .dx-tab-content {
+          color: #2a6ee3;
+        }
+      }
+    }
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs {
+    display: block;
+    border: none;
+    background-color: #fff;
+    color: initial;
+    // -webkit-box-shadow: inset 0 -1px #ddd, inset 0 1px, inset -1px 0, inset 1px 0;
+    box-shadow: initial;
+    // margin-top: 40px;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs .dx-tab {
+    // color: #ddd;
+    color: initial;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs .dx-tab .dx-tab-content {
+    color: #333;
+    @include font-set(14px, 0px, 20px);
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs .dx-tab:after,
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs .dx-tab:before {
+    content: none;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs .dx-tabs-nav-button {
+    color: #ddd;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tab {
+    width: 140px;
+    // -webkit-box-shadow: inset 0 1px, inset 0 -1px #ddd;
+    box-shadow: initial;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-scrollable {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-scrollable .dx-tabs-wrapper {
+    display: block;
+    border: none;
+  }
+  .dx-tabpanel:not(.dx-empty-collection) .dx-multiview-wrapper {
+    // border-top: none;
+    border: none;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tab.dx-tab-selected {
+    // -webkit-box-shadow: inset 0 1px #ddd, inset -1px 0 #ddd, inset 1px 0 #ddd;
+    box-shadow: initial;
+    border: {
+      left: 1px solid #a7afc3;
+      right: 1px solid #a7afc3;
+      top: 1px solid #2a62e3;
+      bottom: 0;
+    }
+    position: relative;
+    bottom: -1px;
+  }
+  .dx-tabpanel-tabs {
+    border-bottom: 1px solid #a7afc3;
+    display: inline-table;
+    margin-bottom: 15px;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tab.dx-tab-active .dx-tab-content,
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tab.dx-tab-selected .dx-tab-content {
+    color: #2a62e3;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-expanded .dx-tab:not(.dx-tab-selected):first-of-type {
+    // -webkit-box-shadow: inset 0 -1px #ddd, inset 1px 0, inset 0 1px;
+    box-shadow: initial;
+  }
+  .dx-rtl .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-expanded .dx-tab:not(.dx-tab-selected):first-of-type,
+  .dx-rtl.dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-expanded .dx-tab:not(.dx-tab-selected):first-of-type,
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-stretched .dx-tab:not(.dx-tab-selected):last-of-type {
+    // -webkit-box-shadow: inset 0 -1px #ddd, inset -1px 0, inset 0 1px;
+    box-shadow: initial;
+  }
+  .dx-rtl .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-stretched .dx-tab:not(.dx-tab-selected):last-of-type,
+  .dx-rtl.dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-stretched .dx-tab:not(.dx-tab-selected):last-of-type,
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-nav-button-left {
+    // -webkit-box-shadow: inset 0 -1px #ddd, inset 1px 0, inset 0 1px;
+    box-shadow: inset 0 -1px #ddd, inset 1px 0, inset 0 1px;
+  }
+  .dx-tabpanel > .dx-tabpanel-tabs .dx-tabs-nav-button-right {
+    -webkit-box-shadow: inset 0 -1px #ddd, inset 0 1px, inset -1px 0;
+    box-shadow: inset 0 -1px #ddd, inset 0 1px, inset -1px 0;
+  }
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs {
+    // -webkit-box-shadow: inset 0 -1px #337ab7, inset 0 1px, inset -1px 0, inset 1px 0;
+    box-shadow: initial;
+  }
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tab {
+    // -webkit-box-shadow: inset 0 1px, inset 0 -1px #337ab7;
+    box-shadow: initial;
+  }
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tab.dx-tab-selected {
+    // -webkit-box-shadow: inset 0 1px #337ab7, inset -1px 0 #337ab7, inset 1px 0 #337ab7;
+    box-shadow: initial;
+  }
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tab.dx-tab-active .dx-tab-content,
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tab.dx-tab-selected .dx-tab-content {
+    color: #2a62e3;
+  }
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-expanded .dx-tab:not(.dx-tab-selected):first-of-type {
+    // -webkit-box-shadow: inset 0 -1px #337ab7, inset 1px 0, inset 0 1px;
+    box-shadow: initial;
+  }
+  .dx-rtl .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-expanded .dx-tab:not(.dx-tab-selected):first-of-type,
+  .dx-rtl.dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-expanded .dx-tab:not(.dx-tab-selected):first-of-type,
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-stretched .dx-tab:not(.dx-tab-selected):last-of-type {
+    // -webkit-box-shadow: inset 0 -1px #337ab7, inset -1px 0, inset 0 1px;
+    box-shadow: initial;
+  }
+  .dx-rtl .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-stretched .dx-tab:not(.dx-tab-selected):last-of-type,
+  .dx-rtl.dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-stretched .dx-tab:not(.dx-tab-selected):last-of-type,
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-nav-button-left {
+    // -webkit-box-shadow: inset 0 -1px #337ab7, inset 1px 0, inset 0 1px;
+    box-shadow: initial;
+  }
+  .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tabs-nav-button-right {
+    // -webkit-box-shadow: inset 0 -1px #337ab7, inset 0 1px, inset -1px 0;
+    box-shadow: initial;
+  }
+  .dx-tabpanel.dx-state-focused .dx-multiview-wrapper {
+    border-color: initial;
+  }
+  .dx-tabpanel .dx-multiview-wrapper {
+    // border-color: #a7afc3;
+    border: none;
+  }
+
+  // 팝업
+
+  .ustra {
+    &.button-bar {
+      &.bottom {
+        padding: 10px 20px !important;
+        background: {
+          color: #e3eaeb;
+        }
+        text-align: right;
+        // justify-content: flex-end;
+      }
+    }
+  }
+  // .buttons-area {
+  // }
+
+  .dx-button {
+    .dx-button-content {
+      padding: 6px 10px;
+    }
+    .dx-button-text {
+      @include font-set(14px, 0px, 20px);
+       // 210802 itw 팝업 어플레케이션 > 버튼 텍스트 검은색으로 노출되어 변경
+      color: inherit;
+    }
+  }
+
+  // alert
+  .alert-popup {
+    .dx-template-wrapper {
+      // display: block !important;
+    }
+    .dx-popup-content {
+      padding: 0;
+      .dx-item-content {
+        padding: 30px 35px;
+        width: 100%;
+        justify-content: space-evenly;
+        > div {
+          &:first-child {
+            margin: 0 !important;
+            text-align: center;
+          }
+          &:last-child {
+            margin: 30px 0 0 0 !important;
+          }
+        }
+        .dx-icon {
+          color: #444444;
+        }
+        .dx-scrollable {
+          margin: {
+            top: 20px;
+          }
+          height: 40px; // alert팝업 스크롤
+        }
+        .dx-button {
+          background: {
+            color: #447cff;
+          }
+          border: {
+            radius: 4px;
+            color: transparent;
+          }
+          .dx-icon-check {
+            &:before {
+              color: #ffffff;
+            }
+          }
+          .dx-button-text {
+            color: #ffffff;
+          }
+        }
+        .dx-scrollview-content {
+          padding: 0;
+          > div {
+            @include font-set(14px, 0px, 20px);
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+  .dx-icon {
+    &.icon {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  // calendar
+  .dx-calendar {
+    width: 280px - 20px;
+    min-width: 280px - 20px;
+    height: 260px;
+  }
+  .dx-popup-wrapper {
+    > .dx-overlay-content {
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+      top: 8px !important;
+    }
+  }
+  .dx-datebox-wrapper-calendar {
+    .dx-popup-content {
+      margin: 0;
+    }
+    .dx-calendar {
+      margin: 15px 10px;
+    }
+  }
+  .dx-calendar-body {
+    top: 40px;
+    thead {
+      tr {
+        height: auto;
+        padding: {
+          bottom: 0;
+        }
+        th {
+          box-shadow: none;
+          @include font-set(13px, 0px, 19px);
+          color: #333333;
+          padding: 5px 11px;
+          text-overflow: unset;
+          font: {
+            weight: 400;
+          }
+        }
+      }
+    }
+  }
+  table {
+    td,
+    th {
+      &:not([align]) {
+        text-align: center;
+      }
+    }
+  }
+  .dx-calendar-cell {
+    @include font-set(13px, 0px, 19px);
+    color: #333333;
+    padding: 5px 11px;
+    text-align: center;
+    width: auto;
+    border: none;
+    overflow: hidden;
+    vertical-align: middle;
+    &.dx-state-hover {
+      background: {
+        color: #e3eaeb;
+      }
+      font: {
+        weight: 500;
+      }
+    }
+    &.dx-calendar-contoured-date {
+      &:not(.dx-calendar-empty-cell) {
+        box-shadow: none;
+      }
+    }
+    &.dx-calendar-today {
+      font: {
+        weight: 500;
+      }
+      color: #447cff;
+    }
+    &.dx-calendar-selected-date {
+      box-shadow: none;
+      font: {
+        weight: 500;
+      }
+      background: {
+        color: #447cff;
+      }
+      color: #fff;
+    }
+  }
+  .dx-calendar-navigator {
+    // height: auto;
+    .dx-calendar-caption-button {
+      left: 30px;
+      right: 30px;
+      border: none;
+      &.dx-state-hover {
+        background: none;
+      }
+      &.dx-button {
+        .dx-button-content {
+          padding: 0;
+          .dx-button-text {
+            padding: 5px 0 3px;
+            color: #447cff;
+            @include font-set(15px, 0, 22px);
+            text-decoration: underline;
+            font: {
+              weight: 500;
+            }
+          }
+        }
+      }
+    }
+    .dx-calendar-navigator-previous-view,
+    .dx-calendar-navigator-next-view {
+      &.dx-state-hover {
+        background: none;
+        border: {
+          color: #cccccc;
+        }
+      }
+      &.dx-button {
+        margin: 0;
+        padding: 0;
+        width: 30px;
+        border: {
+          radius: 2px;
+          color: #cccccc;
+        }
+        .dx-button-content {
+          padding: 0;
+        }
+        .dx-icon {
+          text-align: center;
+          color: #333;
+          font: {
+            size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  // col grid
+  // .dx-validationgroup {
+  //   // padding: 10px 20px; 고객정보수정
+  // }
+
+  // comment box
+  .comment-box {
+    .help-box {
+      padding: 10px 20px !important;
+      background: {
+        color: #e5e5e5 !important;
+      }
+      border: none !important;
+      @include font-set(12px, 0px, 21px);
+      .dx-icon-info {
+        vertical-align: -2px;
+      }
+    }
+    + .title-box {
+      margin: {
+        top: 15px;
+      }
+    }
+  }
+
+  // toolbar box
+  // .dx-toolbar {
+  //   background: {
+  //     color: #ffffff;
+  //   }
+  //   border: {
+  //     top: 1px solid #dddddd;
+  //     bottom: 1px solid #dddddd;
+  //     color: #dddddd;
+  //   }
+  //   // margin: {
+  //   //   top: 15px;
+  //   // }
+  //   // padding: 0 !important; 팝업 header로 수정
+  //   .dx-toolbar-items-container {
+  //     height: 38px;
+  //   }
+  //   .dx-toolbar-button {
+  //     .dx-button {
+  //       border: none;
+  //       .dx-button-content {
+  //         padding: 9px 7px;
+  //       }
+  //     }
+  //     .dx-button-text {
+  //       @include font-set(13px, 0px, 19px);
+  //     }
+  //   }
+  // }
+  // dx tree view
+  .dx-treeview {
+    border: {
+      color: #dddddd;
+    }
+  }
+
+  .dx-texteditor {
+    &.dx-editor-outlined {
+      border: {
+        color: #cccccc;
+      }
+      border-radius: 4px;
+      &.dx-state-focused {
+        border: {
+          color: #447cff;
+        }
+      }
+    }
+
+    &.dx-textbox,
+    &.dx-numberbox {
+      background: {
+        color: #ffffff;
+      }
+    }
+    &.dx-state-readonly {
+      border: {
+        style: solid;
+      }
+      .dx-texteditor-input {
+        color: #bbbbbb;
+      }
+    }
+    // &.dx-state-disabled {
+    //   // 일부 하얀색
+    //   // background: none;
+    // }
+  }
+
+  // .dx-invalid {
+  //   &.dx-texteditor {
+  //     // border: {
+  //     //   color: #ff9429 !important;
+  //     // }
+  //     // &.dx-editor-outlined {
+  //     //   &.dx-show-invalid-badge {
+  //     //     .dx-texteditor-input-container {
+  //     //       &:after {
+  //     //       }
+  //     //     }
+  //     //   }
+  //     // }
+  //     // .dx-texteditor-input-container {
+  //     //   &:after {
+  //     //     // right: 10px;
+  //     //     // right: 4px;
+  //     //   }
+  //     // }
+  //     // .dx-texteditor-input {
+  //     //   padding: {
+  //     //     right: 27px+10px+18px;
+  //     //   }
+  //     // }
+  //   }
+  // }
+
+  body {
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+
+  // direction="row" 일경우 해당 attr에 추가
+  .row-box {
+    padding: 0 -7.5px;
+    > .dx-box-item {
+      + .dx-item {
+        margin: {
+          top: 0;
+        }
+      }
+    }
+    > div {
+      padding: 0 7.5px;
+      &:first-child {
+        padding: {
+          left: 0px;
+        }
+      }
+      &:last-child {
+        padding: {
+          right: 0px;
+        }
+      }
+    }
+  }
+
+  /*
+.divTable {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  .divTableBody {
+    display: table-row-group;
+  }
+  .divTableRow {
+    display: table-row;
+    .divTableCellField {
+      display: table-cell;
+      text-align: center;
+      background: {
+        color: #444444;
+      }
+      color: #ffffff;
+      @include font-set(13px, 0px, 19px);
+      padding: 9px 0 8px;
+      border: {
+        left: 1px solid #ddd;
+      }
+    }
+  }
+}
+*/
+
+  .data-table {
+    table {
+      table-layout: fixed;
+      width: 100%;
+      .t-l {
+        text-align: left;
+      }
+      .t-c {
+        text-align: center;
+      }
+      .t-r {
+        text-align: right;
+      }
+      tr {
+        th {
+          background: {
+            color: #444;
+          }
+          @include font-set(13px, 0px, 19px);
+          color: #fff;
+          font-weight: 400;
+          border: {
+            left: 1px solid #ddd;
+          }
+          padding: 9px 15px 8px;
+        }
+        td {
+          background: {
+            color: #fff;
+          }
+          padding: 8px 15px;
+          color: #333;
+          @include font-set(14px, 0px, 20px);
+          border: {
+            left: 1px solid #ddd;
+            bottom: 1px solid #ddd;
+          }
+          vertical-align: middle;
+          &:last-child {
+            border: {
+              right: 2px solid #ddd;
+            }
+          }
+
+          > * {
+            display: inline-block;
+            vertical-align: top;
+          }
+        }
+      }
+      thead {
+        &:first-child {
+          border-color: #444;
+        }
+        &:first-child {
+          border: {
+            left: 1px solid #444;
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:nth-child(even) {
+            td {
+              background: {
+                color: #f1f1f1;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.type2 {
+      border: {
+        top: 1px solid #ccc;
+      }
+      table {
+        th {
+          vertical-align: middle;
+          border: {
+            left: 1px solid #ccc;
+            bottom: 1px solid #ccc;
+          }
+          text-align: left;
+          background: {
+            color: #eee;
+          }
+          color: #333;
+        }
+        td {
+          border: {
+            color: #ccc;
+          }
+          text-align: left;
+          &:last-child {
+            border: {
+              width: 1px;
+            }
+          }
+        }
+        tr {
+          &:nth-child(even) {
+            td {
+              background: none;
+            }
+          }
+          td {
+            &:last-child {
+              border: {
+                top: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Loading
+  .dx-overlay-wrapper {
+    .dx-loadindicator {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .dx-datagrid-content {
+    .dx-loadindicator {
+      position: initial;
+      top: initial;
+      left: initial;
+      transform: initial;
+    }
+  }
+
+  // 그리드 스크롤
+  #contents .grid-desing-scroll-box {
+    overflow-y: auto;
+  }
+
+  // 서브 타이틀
+  $sub-title-color: $color-1;
+  .sub-title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    .title {
+      @include font-set(15px, -0.3px, 21px);
+      color: $sub-title-color;
+      font: {
+        weight: 500;
+      }
+      justify-items: flex-start;
+      margin: {
+        bottom: 0;
+      }
+    }
+    .util-button-box {
+      justify-items: flex-end;
+    }
+    + div {
+      margin: {
+        top: 15px;
+      }
+    }
+  }
+
+  .sub-title-box2 {
+    .ustra.title {
+      height: 30px;
+      .title {
+        @include font-set(15px, -0.3px, 21px);
+        color: $sub-title-color;
+        font: {
+          weight: 500;
+        }
+        justify-items: flex-start;
+        margin: {
+          bottom: 0;
+        }
+        padding: {
+          left: 0;
+        }
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // title 서브 카피
+  .description-box {
+    color: #888;
+    margin: {
+      top: 0 !important;
+    }
+    font: {
+      size: 11px;
+    }
+  }
+  .point-color-1 {
+    color: #447cff;
+  }
+  .point-color-2 {
+    color: #ff9429;
+  }
+
+  // 기본사이즈
+  // 모바일플랫폼
+  .full-width {
+    & .dx-textbox {
+      width: 0;
+    }
+    & .dx-textarea {
+      width: 0;
+    }
+    & .dx-datebox {
+      width: 0;
+    }
+    & .dx-numberbox {
+      width: 0;
+    }
+  }
+  // 보너스카드
+  .dx-textbox {
+    width: 284px;
+    &.dx-datebox {
+      width: 133px;
+    }
+    &.dx-textarea {
+      width: 100%;
+    }
+    // &.dx-textbox,  // 조회 input 특정 클랙스 생성시 변경
+    &.dx-datebox,
+    &.dx-selectbox {
+      .dx-texteditor-input {
+        padding: {
+          right: 45px !important;
+        }
+      }
+    }
+  }
+  .dx-numberbox {
+    width: 284px;
+  }
+
+  // validator
+  .dx-invalid {
+    &.dx-texteditor {
+      border: {
+        color: #ff9429 !important;
+      }
+      &.dx-selectbox,
+      &.dx-datebox {
+        .dx-texteditor-input-container {
+          &:after {
+            // right: 27px !important;
+            right: 5px !important;
+          }
+        }
+      }
+    }
+    .dx-texteditor-input-container {
+      &:after {
+        background: {
+          color: #ff9429 !important;
+        }
+        right: 5px !important;
+        // right: 27px !important;
+        // right: 4px !important; // 조회 input 특정 클랙스 생성시 변경
+      }
+    }
+  }
+
+  // 파일첨부
+  .dx-fileuploader-wrapper {
+    padding: 0px;
+  }
+  .dx-fileuploader-input-wrapper {
+    padding: 0px;
+    border: none;
+    margin: {
+      right: 5px;
+    }
+  }
+  .file-upload-box {
+    > .dx-button {
+      margin: {
+        left: 4px;
+      }
+    }
+  }
+
+  .simplebar-scrollbar {
+    &.simplebar-visible {
+      &:before {
+        opacity: 1 !important;
+      }
+    }
+    &:before {
+      background: {
+        color: #666;
+      }
+      border: {
+        radius: 0;
+      }
+    }
+  }
+
+  // IE 관련
+
+  .ustra .dx-field .dx-field-value > * {
+    flex-basis: auto; // 크롬
+    // flex-basis: 0 !important; // IE
+  }
+
+  .dx-texteditor.dx-editor-outlined {
+    flex: 1 1 auto; // IE
+  }
+  .dx-field-value:not(.dx-widget) > .dx-datebox {
+    min-width: auto;
+  }
+  .dx-tabpanel {
+    width: 100%;
+  }
+
+  .ustra .null-value-select-box .dx-placeholder {
+    padding: 0px 3px;
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 20px;
+    color: #111111;
+    min-height: auto;
+    border-radius: 0px;
+    // font-size: 12px;
+    // color: #28484f;
+  }
+
+  @media screen and(-ms-high-contrast: active), (ms-high-contrast: none) {
+    body {
+      background: red;
+    }
+  }
+
+  // .dx-checkbox-icon {
+  //   border: 1px solid #d1d1d1;
+  //   background-color: #ffffff;
+  // }
+
+  .dx-datagrid-rowsview .dx-select-checkboxes-hidden > tbody > tr > td > .dx-select-checkbox {
+    display: block !important;
+  }
+  .dx-datebox-calendar .dx-dropdowneditor-icon {
+    width: 24px;
+  }
+  .dx-treeview .dx-treeview-item-without-checkbox.dx-state-selected > .dx-treeview-item {
+    background-color: #447cff;
+    color: #fff;
+  }
+  .ustra.button-bar {
+    margin-bottom: 15px;
+  }
+  .no-title + .no-title {
+    .ustra.button-bar {
+      margin-top: -25px;
+    }
+  }
+  // .ustra.fieldset + .no-title {
+  //   .ustra.button-bar {
+  //     margin-bottom: 0;
+  //   }
+  // }
+  .ustra.button-bar.bottom {
+    margin-bottom: 0;
+  }
+  .dx-checkbox-indeterminate .dx-checkbox-icon:before {
+    display: none;
+  }
+  .dx-toolbar .dx-toolbar-items-container {
+    height: 36px;
+    padding: {
+      left: 10px;
+      right: 10px;
+    }
+  }
+  // 메뉴관리 버튼 위치
+  .dx-toolbar .dx-toolbar-after {
+    padding-left: 0;
+    left: 0;
+  }
+}

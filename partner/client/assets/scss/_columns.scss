@@ -1,0 +1,17 @@
+
+.columns {
+  @include ltr-property("margin", -$column-gap, false);
+  @include ltr-property("margin", -$column-gap);
+
+  // margin-bottom: 0;
+  // margin-top:0;
+  margin: 0;
+  &:last-child {
+    margin-bottom: -$column-gap;
+    // margin-bottom:0;
+  }
+  &:not(:last-child) {
+    margin-bottom:0;
+    // margin-bottom: -$column-gap;
+  }
+}

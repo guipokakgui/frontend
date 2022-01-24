@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+@import './bulma-scss/utilities/_initial-variables';
+@import './fonts.scss';
+
+// color set
+$color-01: #447cff; //main
+$color-02: #a7afc3;
+$color-03: #dfe3ea; //border
+$color-04: #ddeaff;
+$color-05: #f5f6fa; //bg
+$color-06: #333333; //text
+$color-07: #f0f4fa; //컨텐츠 영역 bg
+
+/* Base: Size  */
+$size-base: 1rem;
+$default-padding: $size-base * 1.5;
+
+// 16*1.125 = 18
+
+/* Default font */
+$family-sans-serif: 'NotoSansKR', sans-serif;
+
+/* Base color */
+$base-color: #2e323a;
+$base-color-light: rgba(24, 28, 33, 0.06);
+
+/* General overrides */
+// $primary: $turquoise;
+$body-background-color: $color-05;
+$link: $blue;
+$link-visited: $purple;
+$light-border: 1px solid $base-color-light;
+$hr-height: 1px;
+
+/* NavBar: specifics */
+$navbar-input-color: $grey-darker;
+$navbar-input-placeholder-color: $grey-lighter;
+$navbar-box-shadow: 0 1px 0 rgba(24, 28, 33, 0.04);
+$navbar-divider-border: 1px solid rgba($grey-lighter, 0.25);
+$navbar-item-h-padding: $default-padding * 0.75;
+$navbar-avatar-size: 1.75rem;
+
+/* Aside: Bulma override */
+$menu-item-radius: 0;
+$menu-list-link-padding: $size-base * 0.5 0;
+$menu-label-color: lighten($base-color, 25%);
+$menu-item-color: $color-06;
+$menu-item-hover-color: $color-01;
+$menu-item-hover-background-color: none;
+$menu-item-active-color: $color-01;
+$menu-item-active-background-color: none;
+$menu-list-border-left: none;
+$menu-nested-list-padding-left: 20px;
+
+/* Aside: specifics */
+// $aside-width: $size-base * 21;
+// $aside-width: $size-base * 22.25;
+$aside-width: $size-base * 23.5;
+$aside-mobile-width: 0;
+$aside-icon-width: $size-base * 3;
+$aside-submenu-font-size: $size-base * 0.95;
+$aside-box-shadow: none;
+$aside-background-color: $base-color;
+$aside-tools-background-color: darken($aside-background-color, 10%);
+$aside-tools-color: $white;
+
+/* Title Bar: specifics */
+$title-bar-color: $grey;
+$title-bar-active-color: $black-ter;
+
+/* Hero Bar: specifics */
+$hero-bar-background: $white;
+
+/* Card: Bulma override */
+$card-shadow: none;
+$card-header-shadow: none;
+
+/* Card: specifics */
+$card-border: 1px solid $base-color-light;
+$card-header-border-bottom-color: $base-color-light;
+
+/* Table: Bulma override */
+$table-cell-border: 1px solid $white-bis;
+
+/* Table: specifics */
+$table-avatar-size: $size-base * 1.5;
+$table-avatar-size-mobile: 25vw;
+
+/* Form */
+$checkbox-border: 1px solid $base-color;
+
+/* Modal card: Bulma override */
+$modal-card-head-background-color: $white-ter;
+$modal-card-title-size: $size-base;
+// $modal-card-body-padding: 1.5rem 2rem;
+$modal-card-head-border-bottom: 1px solid $white-ter;
+$modal-card-foot-border-top: 0;
+
+/* Modal card: specifics */
+$modal-card-width: 40vw;
+$modal-card-width-mobile: 90vw;
+$modal-card-foot-background-color: $white-ter;
+
+/* Notification: Bulma override */
+$notification-padding: $default-padding * 0.75 $default-padding;
+
+/* Footer: Bulma override */
+$footer-background-color: $white;
+$footer-padding: $default-padding * 0.33 $default-padding;
+
+/* Footer: specifics */
+$footer-logo-height: $size-base * 2;
+
+/* Progress: Bulma override */
+$progress-bar-background-color: $grey-lighter;
+
+/* Icon: specifics */
+$icon-update-mark-size: $size-base * 0.5;
+$icon-update-mark-color: $yellow;
+
+/* _menu */
+// $menu-list-link-padding: 0.5em 0.75em !default;
+// $menu-nested-list-margin: 0.75em !default;
+
+// $navbar-breakpoint: $fullhd !default;
+$navbar-breakpoint: $fullhd !default;
+
+/* _table */
+$table-cell-border: 1px solid $color-03;
+$table-head-background-color: #ffffff;
+$table-row-hover-background-color: #f2f4f7;
+$table-cell-padding: 0.7em 0.75em;
+
+/* _breadcrumb */
+$breadcrumb-item-padding-vertical: 0 !default;
+$breadcrumb-item-padding-horizontal: 0.2em !default;
+
+/* _control */
+$radius-small: 4px;
+$control-radius-small: 4px;
+$control-height: 2.25em;
+
+/* _tabs */
+$tabs-boxed-link-radius: 0;
+
+/*  */
+// $size-normal:0.938rem;
+/* ========  custom itw ======== */
+$img-path: './img/';
+
+$navbar-item-active-color: $color-01;
+$navbar-dropdown-item-hover-background-color: $color-04;
+$navbar-height: 5.313rem;
+
+$header-font-size: $size-base * 1.125;
+$header-line-height: 1;
+
+$layout-gap: 40px;
+$max-input: 290px;
+$min-label: 120px;
+
+// $navbar-breakpoint: $desktop !default;
+
+@mixin transition($t) {
+  transition: $t 250ms ease-in-out 50ms;
+}
+
+@mixin icon-with-update-mark($icon-base-width) {
+  .icon {
+    width: $icon-base-width;
+
+    &.has-update-mark:after {
+      right: ($icon-base-width * 0.5) - 0.85;
+    }
+  }
+}
+
+@import './bulma-scss/bulma.scss';
+
+// @import './_select.scss';
+@import './_button.scss';
+// @import './_table.scss';
+@import './_tools.scss';
+@import './_columns.scss';
+@import './_navbar.scss';
+@import './_menu.scss';
+// @import './_simplebar.scss';
+
+@import './_layout.scss';
+@import './_contents.scss';
+@import './_modal.scss';

@@ -1,0 +1,21 @@
+{
+  "name": "@gsc/eaccount-partner",
+  "version": "1.0.0",
+  "description": "GSC EAccount Partner - bo",
+  "main": "src/index.ts",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "browserslist": [
+    "last 2 version",
+    "android >= 4.4",
+    "IE >= 11"
+  ],
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development CONFIG_ENV=local nuxt-ts dev --spa",
+    "generate": "rm -rf ./node_modules && cross-env NODE_ENV=production CONFIG_ENV=dev nuxt-ts generate --spa"
+  },
+  "dependencies": {
+    "@gsc/eaccount-cmm": "1.0.0"
+  }
+}

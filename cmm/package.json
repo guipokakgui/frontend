@@ -1,0 +1,13 @@
+{
+  "name": "@gsc/eaccount-cmm",
+  "version": "1.0.0",
+  "description": "GSC EAccount Partner - cmm",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "browserslist": [
+    "last 2 version",
+    "android >= 4.4",
+    "IE >= 11"
+  ]
+}
